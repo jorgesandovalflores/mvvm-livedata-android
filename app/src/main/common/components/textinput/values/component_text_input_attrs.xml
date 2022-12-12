@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ComponentTextInput">
+        <attr name="android:maxLength" format="integer" min="0"/>
+        <attr name="inputType">
+            <enum name="text" value="1" />
+            <enum name="textAllCaps" value="4096"></enum>
+            <enum name="textPassword" value="128" />
+            <enum name="numberPassword" value="16" />
+        </attr>
+        <attr name="android:imeOptions"/>
+        <attr name="android:hint"/>
+    </declare-styleable>
+</resources>

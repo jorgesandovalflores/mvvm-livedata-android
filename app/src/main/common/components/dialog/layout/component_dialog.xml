@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal|center_vertical"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/default_dp_4_4">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/default_dp_10_32"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/default_dp_10_32"
+        android:paddingStart="@dimen/default_dp_4_6"
+        android:paddingTop="@dimen/default_dp_4_2"
+        android:paddingEnd="@dimen/default_dp_4_6"
+        android:paddingBottom="@dimen/default_dp_4_8">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/component_dialog_ic_close"
+            android:layout_marginTop="@dimen/default_sp_4_4"
+            android:padding="@dimen/default_sp_4_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/ivError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_dp_4_6"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/component_dialog_ic_alert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/text_headline.green_wiener"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_dp_4_6"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivError"
+            tools:text="Titulo del popup"/>
+
+        <TextView
+            android:id="@+id/tvMessage"
+            style="@style/text_body_form.gray2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_sp_4_2"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            tools:text="Este es el mensaje del popup, puede ser muy corto o muy largo"/>
+
+        <Button
+            android:id="@+id/btnPrimary"
+            style="@style/button_primary_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_dp_4_6"
+            tools:text="Button Primary"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMessage"/>
+
+        <Button
+            android:id="@+id/btnSecondary"
+            style="@style/button_secondary_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_sp_4_2"
+            tools:text="Button Secondary"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnPrimary"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

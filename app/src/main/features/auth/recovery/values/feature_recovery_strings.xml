@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_recovery_toolbar">Olvidé contraseña</string>
+    <string name="feature_recovery_text_one">Para poder recuperar su contraseña, ingrese \nsu código de alumno y te enviaremos un correo.</string>
+    <string name="feature_recovery_text_two">¡Te enviamos tu contraseña al correo! \nPor favor revisa tu correo electrónico para poder recuperar tu contraseña.</string>
+    <string name="feature_recovery_username_hint">Código de alumno</string>
+    <string name="feature_recovery_button">Enviar</string>
+    <string name="feature_recovery_button_resend">Volver a enviar</string>
+    <string name="feature_recovery_validate_username">El formato del código es inválido</string>
+</resources>

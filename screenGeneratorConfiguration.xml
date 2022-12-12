@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+    <component name="ScreenGeneratorConfiguration">
+        <option name="settings">
+            <Settings>
+                <option name="categories">
+                    <list>
+                        <Category>
+                            <option name="id" value="1" />
+                            <option name="name" value="CleanFeature" />
+                        </Category>
+                        <Category>
+                            <option name="customVariables">
+                                <list>
+                                    <CustomVariable>
+                                        <option name="name" value="ItemModelType" />
+                                    </CustomVariable>
+                                </list>
+                            </option>
+                            <option name="id" value="2" />
+                            <option name="name" value="CleanFeatureViewCell" />
+                        </Category>
+                        <Category>
+                            <option name="customVariables">
+                                <list>
+                                    <CustomVariable>
+                                        <option name="name" value="featurePackagePath" />
+                                    </CustomVariable>
+                                </list>
+                            </option>
+                            <option name="id" value="3" />
+                            <option name="name" value="CleanFeatureDataSource" />
+                        </Category>
+                    </list>
+                </option>
+                <option name="screenElements">
+                    <list>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="DeleteThisFile" />
+                            <option name="name" value="DataSource" />
+                            <option name="subdirectory" value="datasource" />
+                            <option name="template"
+                                value="package %packageName%&#10;&#10;class %screenName%%screenElement%" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="Module" />
+                            <option name="subdirectory" value="module" />
+                            <option name="template"
+                                value="package %packageName%.module&#10;&#10;import org.koin.androidx.viewmodel.dsl.viewModel&#10;import org.koin.core.module.Module&#10;import org.koin.core.qualifier.named&#10;import org.koin.dsl.module&#10;&#10;import %packageName%.datasource.repository.I%screenName%Repository&#10;import %packageName%.datasource.repository.%screenName%Repository&#10;import %packageName%.datasource.service.I%screenName%Service&#10;import %packageName%.usecase.%screenName%UseCase&#10;import %packageName%.viewmodel.%screenName%BindingDelegate&#10;import %packageName%.viewmodel.%screenName%ViewModel&#10;import retrofit2.Retrofit&#10;&#10;val %screenNameLowerCase%%screenElement%: Module =  module {&#10;    &#10;    //Inject viewModel&#10;    viewModel { %screenName%ViewModel(%screenNameLowerCase%UseCase = get(), bindingDelegate = get()) }&#10;    factory { provider%screenName%BindingDelegate() }&#10;    &#10;    //Inject repository&#10;    single&lt;I%screenName%Repository&gt; {  %screenName%Repository(get(named(&quot;ApiPrivate&quot;))) }&#10;    &#10;    //Inject useCase&#10;    single { provider%screenName%UseCase(get()) }&#10;    &#10;    //Inject service&#10;    single(named(&quot;ApiPrivate&quot;)) { provider%screenName%Service(get()) }&#10;}&#10;&#10;fun provider%screenName%BindingDelegate(): %screenName%BindingDelegate{&#10;    return %screenName%BindingDelegate()&#10;}&#10;&#10;fun provider%screenName%UseCase(%screenNameLowerCase%Repository: I%screenName%Repository): %screenName%UseCase{&#10;    return %screenName%UseCase(%screenNameLowerCase%Repository)&#10;}&#10;&#10;fun provider%screenName%Service(retrofit: Retrofit): I%screenName%Service{&#10;    return retrofit.create(I%screenName%Service::class.java)&#10;}&#10;        &#10;        " />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="UseCase" />
+                            <option name="subdirectory" value="usecase" />
+                            <option name="template"
+                                value="package %packageName%.usecase&#10;&#10;import mvvm_livedata_android.core.usecase.BaseUseCase&#10;import %packageName%.datasource.repository.I%screenName%Repository&#10;import %packageName%.datasource.entity.%screenName%EntityRequest&#10;        &#10;class %screenName%%screenElement%(private val %screenNameLowerCase%Repository: I%screenName%Repository) :&#10;        BaseUseCase&lt;%screenName%EntityRequest, List&lt;%screenName%UseCaseModel&gt;&gt;() {&#10;&#10;    override suspend fun run(params: %screenName%EntityRequest): List&lt;%screenName%UseCaseModel&gt;{&#10;        return %screenNameLowerCase%Repository.callGetSomeMethod(params)&#10;    }&#10;}" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="UseCaseModel" />
+                            <option name="subdirectory" value="usecase" />
+                            <option name="template"
+                                value="package %packageName%.usecase&#10;&#10;data class %screenName%%screenElement%(&#10;    val someFieldExample: String&#10;)&#10;        &#10;        " />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="EntityMapper" />
+                            <option name="subdirectory" value="usecase" />
+                            <option name="template"
+                                value="package %packageName%.usecase&#10;&#10;import %packageName%.datasource.entity.%screenName%EntityResponse&#10;        &#10;fun %screenName%EntityResponse.toUseCaseModel() = %screenName%UseCaseModel(&#10;    someFieldExample = exampleField&#10;)&#10;&#10;fun %screenName%UseCaseModel.toEntityResponse() = %screenName%EntityResponse(&#10;    exampleField = someFieldExample&#10;)        " />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="ViewActivity" />
+                            <option name="subdirectory" value="view" />
+                            <option name="template"
+                                value="package %packageName%.view&#10;&#10;import mvvm_livedata_android.core.bases.view.BaseActivity&#10;import mvvm_livedata_android.databinding.%screenName%%screenElement%Binding&#10;&#10;class %screenName%%screenElement%: BaseActivity&lt;%screenName%%screenElement%Binding&gt;() {&#10;&#10;    override fun onReadyData() {&#10;}&#10;}" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="ViewFragment" />
+                            <option name="subdirectory" value="view" />
+                            <option name="template"
+                                value="package %packageName%.view&#10;&#10;import org.koin.androidx.viewmodel.ext.android.viewModel&#10;import mvvm_livedata_android.databinding.%screenName%%screenElement%Binding&#10;import mvvm_livedata_android.core.bases.view.BaseFragment&#10;import mvvm_livedata_android.core.bases.viewmodel.BaseViewModel&#10;import androidx.navigation.fragment.navArgs&#10;import %packageName%.viewmodel.%screenName%ViewModel&#10;&#10;class %screenName%%screenElement% : BaseFragment&lt;%screenName%%screenElement%Binding&gt;() {&#10;&#10;    private val %screenNameLowerCase%ViewModel: %screenName%ViewModel by viewModel()&#10;    private var %screenNameLowerCase%ViewInput: %screenName%ViewInput? = null&#10;    &#10;    // override methods&#10;    override fun getViewModel(): BaseViewModel = %screenNameLowerCase%ViewModel&#10;&#10;    override fun bindObserversToLiveData() {&#10;        super.bindObserversToLiveData()&#10;    }&#10;&#10;    override fun onReadyData() {&#10;        //Initialize your ui here&#10;    %screenNameLowerCase%ViewInput = getViewInputForActivity()&#10;    if (%screenNameLowerCase%ViewInput == null || arguments != null) {&#10;    %screenNameLowerCase%ViewInput = %screenName%%screenElement%Args.fromBundle(requireArguments()).%screenNameLowerCase%ViewInput } }&#10;&#10;    override fun onReadyView() {&#10;        //Initialize your ui here&#10;    }&#10;&#10;    // ui methods&#10;   }" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate"
+                                value="%screenNameSnakeCase%_view_fragment" />
+                            <option name="fileType" value="Layout XML" />
+                            <option name="name" value="LayoutFragment" />
+                            <option name="template"
+                                value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;androidx.constraintlayout.widget.ConstraintLayout&#10;    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&#10;    android:background=&quot;@color/white&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&gt;&#10;&#10;    &#10;&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate"
+                                value="%screenNameSnakeCase%_view_activity" />
+                            <option name="fileType" value="Layout XML" />
+                            <option name="name" value="LayoutActivity" />
+                            <option name="template"
+                                value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;androidx.constraintlayout.widget.ConstraintLayout &#10;    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&#10;    android:background=&quot;@color/white&quot;&#10;    tools:context=&quot;%packageName%.view.%screenName%ViewActivity&quot;&gt;&#10;&#10;    &lt;androidx.fragment.app.FragmentContainerView&#10;        android:id=&quot;@+id/content_fragment_%screenName%&quot;&#10;        android:name=&quot;androidx.navigation.fragment.NavHostFragment&quot;&#10;        android:layout_width=&quot;0dp&quot;&#10;        android:layout_height=&quot;0dp&quot;&#10;        app:layout_constraintLeft_toLeftOf=&quot;parent&quot;&#10;        app:layout_constraintRight_toRightOf=&quot;parent&quot;&#10;        app:layout_constraintTop_toTopOf=&quot;parent&quot;&#10;        app:layout_constraintBottom_toBottomOf=&quot;parent&quot;&#10;        app:defaultNavHost=&quot;true&quot;&#10;        app:navGraph=&quot;@navigation/%screenNameSnakeCase%_view_navigation&quot; /&gt;&#10;&#10;    &#10;&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate"
+                                value="%screenNameSnakeCase%_view_navigation" />
+                            <option name="fileType" value="Layout XML" />
+                            <option name="name" value="Navigation" />
+                            <option name="sourceSet" value="navigation" />
+                            <option name="template"
+                                value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;navigation &#10;    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&#10;    android:id=&quot;@+id/%screenNameSnakeCase%_navigation&quot;&#10;    app:startDestination=&quot;@id/%screenNameSnakeCase%_entry&quot;&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/%screenNameSnakeCase%_entry&quot;&#10;        android:name=&quot;%packageName%.view.%screenName%ViewFragment&quot;&#10;        android:label=&quot;%screenName%Entry&quot;&#10;        tools:layout=&quot;@layout/%screenNameSnakeCase%_view_fragment&quot;&gt;&#10;        &lt;argument&#10;            android:name=&quot;%screenNameLowerCase%ViewInput&quot;&#10;            android:defaultValue=&quot;@null&quot;&#10;            app:argType=&quot;%packageName%.view.%screenName%ViewInput&quot;&#10;            app:nullable=&quot;true&quot;/&gt;        &#10;    &lt;/fragment&gt;&#10;    &#10;&lt;/navigation&gt;" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="ViewInput" />
+                            <option name="subdirectory" value="view" />
+                            <option name="template"
+                                value="package %packageName%.view&#10;&#10;import android.os.Parcelable&#10;import kotlinx.android.parcel.Parcelize&#10;&#10;@Parcelize&#10;data class %screenName%%screenElement%(&#10;    val someFieldExample: String&#10;): Parcelable" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="ViewModel" />
+                            <option name="subdirectory" value="viewmodel" />
+                            <option name="template"
+                                value="package %packageName%.viewmodel&#10;&#10;import mvvm_livedata_android.core.bases.viewmodel.BaseViewModel&#10;import %packageName%.usecase.%screenName%UseCase&#10;import %packageName%.viewmodel.%screenName%BindingDelegate&#10;import %packageName%.viewmodel.%screenName%PresenterDelegate&#10;        &#10;class %screenName%%screenElement%(&#10;        private val %screenNameLowerCase%UseCase: %screenName%UseCase,&#10;        override val bindingDelegate: %screenName%BindingDelegate,&#10;        private val presenterDelegate: %screenName%PresenterDelegate = %screenName%PresenterDelegate(bindingDelegate) &#10;) : BaseViewModel(bindingDelegate,presenterDelegate) {&#10;    /*&#10;    Ejemplo de ejecución sobre un caso de uso&#10;&#10;    fun callGetStores(latitude: Double?, longitude: Double?) {&#10;        viewModelScope.launch {&#10;            val apiToken = sitesUseCase.fetchApiToken()&#10;            when (val response = sitesUseCase.invoke(apiToken)) {&#10;                is ResultWrapper.ApiError -&gt; delegate.showErrorPostValue(&quot;error&quot;)&#10;                is ResultWrapper.ApiSuccess -&gt; delegate.showListSitesPostValue(response.value)&#10;            }&#10;        }&#10;    }&#10;*/&#10;}" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenName%BindingDelegate" />
+                            <option name="name" value="BindingDelegate" />
+                            <option name="subdirectory" value="viewmodel" />
+                            <option name="template"
+                                value="package %packageName%.viewmodel&#10;&#10;import androidx.lifecycle.LiveData&#10;import androidx.lifecycle.MutableLiveData&#10;import mvvm_livedata_android.core.bases.viewmodel.BaseBindingDelegate&#10;import mvvm_livedata_android.core.bases.viewmodel.Event&#10;&#10;class %screenName%BindingDelegate : BaseBindingDelegate() {&#10;    &#10;}" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="PresenterDelegate" />
+                            <option name="subdirectory" value="viewmodel" />
+                            <option name="template"
+                                value="package %packageName%.viewmodel&#10;&#10;import mvvm_livedata_android.core.bases.viewmodel.BasePresenterDelegate&#10;&#10;class %screenName%%screenElement%(private val bindingDelegate: %screenName%BindingDelegate) :&#10;    BasePresenterDelegate(bindingDelegate) {&#10;    &#10;}" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="1" />
+                            <option name="fileNameTemplate" value="%screenNameSnakeCase%_strings" />
+                            <option name="fileType" value="Layout XML" />
+                            <option name="name" value="StringFile" />
+                            <option name="template"
+                                value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;resources&gt;&#10;    &lt;string name=&quot;%screenNameSnakeCase%_example&quot;&gt;Texto de ejemplo&lt;/string&gt;&#10;&lt;/resources&gt;" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="2" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="ViewHolder" />
+                            <option name="subdirectory" value="cell" />
+                            <option name="template"
+                                value="package %packageName%.cell&#10;&#10;import mvvm_livedata_android.databinding.%screenName%ViewCellBinding&#10;import mvvm_livedata_android.core.bases.view.cell.BaseViewHolder&#10;import mvvm_livedata_android.core.bases.view.cell.IOnItemClickViewHolder&#10;&#10;class %screenName%%screenElement%(private val binding: %screenName%ViewCellBinding, onItemClickListener: IOnItemClickViewHolder) :&#10;    BaseViewHolder&lt;String&gt;(binding, onItemClickListener) {&#10;&#10;    override fun bindingDataInHolder(data: String) {&#10;        super.bindingDataInHolder(data)&#10;        //Insert your binding data here&#10;    }&#10;}" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="2" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="Adapter" />
+                            <option name="subdirectory" value="cell" />
+                            <option name="template"
+                                value="package %packageName%.cell&#10;&#10;import android.view.LayoutInflater&#10;import android.view.ViewGroup&#10;import mvvm_livedata_android.core.bases.view.cell.BaseAdapter&#10;import mvvm_livedata_android.core.bases.view.cell.BaseViewHolder&#10;import mvvm_livedata_android.core.bases.view.cell.IOnItemClickViewHolder&#10;import mvvm_livedata_android.databinding.%screenName%ViewCellBinding&#10;&#10;class %screenName%Adapter(&#10;    dataList: List&lt;%ItemModelType%&gt; = mutableListOf(),&#10;    private val onItemClickListener: IOnItemClickViewHolder&#10;) : BaseAdapter&lt;%ItemModelType%&gt;(dataList, onItemClickListener) {&#10;&#10;    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder&lt;%ItemModelType%&gt; {&#10;        return %screenName%ViewHolder(%screenName%ViewCellBinding.inflate( LayoutInflater.from(parent.context), parent, false), onItemClickListener)&#10;    }&#10;}" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="2" />
+                            <option name="fileNameTemplate"
+                                value="%screenNameSnakeCase%_view_cell" />
+                            <option name="fileType" value="Layout XML" />
+                            <option name="name" value="ItemLayout" />
+                            <option name="template"
+                                value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;androidx.cardview.widget.CardView&#10;    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&#10;    android:id=&quot;@+id/%screenNameSnakeCase%_parent&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    app:layout_constraintEnd_toEndOf=&quot;parent&quot;&#10;    app:layout_constraintTop_toTopOf=&quot;parent&quot;&#10;    android:elevation=&quot;0dp&quot;&#10;    android:clickable=&quot;true&quot;&#10;    android:focusable=&quot;true&quot;&#10;    android:foreground=&quot;?selectableItemBackgroundBorderless&quot;&#10;    app:cardCornerRadius=&quot;@dimen/cardview_default_radius&quot;&#10;    app:cardElevation=&quot;0dp&quot;&gt;&#10;&#10;&lt;androidx.constraintlayout.widget.ConstraintLayout&#10;    android:background=&quot;@color/gray1&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;@dimen/default_dp_10_10&quot;&gt;&#10;&#10;    &lt;TextView&#10;        android:layout_width=&quot;wrap_content&quot;&#10;        android:layout_height=&quot;wrap_content&quot;&#10;        android:ellipsize=&quot;end&quot;&#10;        android:maxLines=&quot;2&quot;&#10;        app:layout_constraintBottom_toBottomOf=&quot;parent&quot;&#10;        app:layout_constraintEnd_toEndOf=&quot;parent&quot;&#10;        app:layout_constraintStart_toStartOf=&quot;parent&quot;&#10;        app:layout_constraintTop_toTopOf=&quot;parent&quot;&#10;        tools:text=&quot;Insert your view here&quot; /&gt;&#10;&#10;&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;&#10;&#10;&lt;/androidx.cardview.widget.CardView&gt;" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="3" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="EntityResponse" />
+                            <option name="subdirectory" value="entity" />
+                            <option name="template"
+                                value="package %packageName%.entity&#10;&#10;import com.google.gson.annotations.SerializedName&#10;&#10;data class %screenName%%screenElement% (&#10;    @SerializedName(&quot;example_field&quot;)  val exampleField : String = &quot;&quot;&#10;)" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="3" />
+                            <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+                            <option name="name" value="EntityRequest" />
+                            <option name="subdirectory" value="entity" />
+                            <option name="template"
+                                value="package %packageName%.entity&#10;&#10;import com.google.gson.annotations.SerializedName&#10;&#10;data class %screenName%%screenElement%(&#10;    @SerializedName(&quot;example_field&quot;)  val exampleField : String = &quot;&quot;&#10;)" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="3" />
+                            <option name="fileNameTemplate" value="I%screenName%Repository" />
+                            <option name="name" value="RepositoryInterface" />
+                            <option name="subdirectory" value="repository" />
+                            <option name="template"
+                                value="package %packageName%.repository&#10;&#10;import %featurePackagePath%.datasource.entity.%screenName%EntityRequest&#10;import %featurePackagePath%.usecase.%screenName%UseCaseModel&#10;&#10;interface I%screenName%Repository {&#10;    @Throws(Exception::class)&#10;    suspend fun callGetSomeMethod(%screenNameLowerCase%EntityRequest: %screenName%EntityRequest): List&lt;%screenName%UseCaseModel&gt;&#10;}        " />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="3" />
+                            <option name="fileNameTemplate" value="%screenName%Repository" />
+                            <option name="name" value="RepositoryImpl" />
+                            <option name="subdirectory" value="repository" />
+                            <option name="template"
+                                value="package %packageName%.repository&#10;&#10;import %packageName%.service.I%screenName%Service&#10;import %packageName%.entity.%screenName%EntityRequest&#10;import %featurePackagePath%.usecase.%screenName%UseCaseModel&#10;import %featurePackagePath%.usecase.toUseCaseModel&#10;&#10;class %screenName%Repository(private val i%screenName%Service: I%screenName%Service): I%screenName%Repository {&#10;    @Throws(Exception::class)&#10;    override suspend fun callGetSomeMethod(%screenNameLowerCase%EntityRequest: %screenName%EntityRequest): List&lt;%screenName%UseCaseModel&gt; {&#10;        return i%screenName%Service.getSomeMethod(%screenNameLowerCase%EntityRequest).map { it.toUseCaseModel() }&#10;    }&#10;}" />
+                        </ScreenElement>
+                        <ScreenElement>
+                            <option name="categoryId" value="3" />
+                            <option name="fileNameTemplate" value="I%screenName%Service" />
+                            <option name="name" value="ServiceInterface" />
+                            <option name="subdirectory" value="service" />
+                            <option name="template"
+                                value="package %packageName%.service&#10;&#10;import %packageName%.entity.%screenName%EntityResponse&#10;import %packageName%.entity.%screenName%EntityRequest&#10;import retrofit2.Response&#10;import retrofit2.http.GET&#10;import retrofit2.http.Query&#10;&#10;interface I%screenName%Service {&#10;&#10;    //Example api client method&#10;    @GET(&quot;qry/api-example/some-method&quot;)&#10;    suspend fun getSomeMethod(@Query(&quot;request&quot;) entityRequest: %screenName%EntityRequest): List&lt;%screenName%EntityResponse&gt;&#10;}        " />
+                        </ScreenElement>
+                    </list>
+                </option>
+            </Settings>
+        </option>
+    </component>
+</project>

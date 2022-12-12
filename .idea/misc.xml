@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.18854166666666666" />
+        <entry key="app/src/main/common/components/cardhome/layout/component_cardhome.xml" value="0.25833333333333336" />
+        <entry key="app/src/main/common/components/cardschedule/layout/component_cardschedule.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/common/components/dialog/layout/component_dialog.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/common/components/spinner/layout/component_spinner.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/common/components/spinner/layout/component_spinner_bottom_sheet.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/common/components/spinner/layout/component_spinner_item_bottom_sheet.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/common/components/textinput/layout/component_text_input.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/features/assistance/layout/feature_assistance_dayweek_cell.xml" value="0.3365036231884058" />
+        <entry key="app/src/main/features/assistance/layout/feature_assistance_view_cell.xml" value="0.2755208333333333" />
+        <entry key="app/src/main/features/assistance/layout/feature_assistance_view_fragment.xml" value="0.2740036231884058" />
+        <entry key="app/src/main/features/auth/signin/drawable/feature_sign_in_bg_header.xml" value="0.1065" />
+        <entry key="app/src/main/features/auth/signin/layout/feature_sign_in_view_fragment.xml" value="0.13768115942028986" />
+        <entry key="app/src/main/features/career/layout/feature_career_view_cell.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/features/career/layout/feature_career_view_fragment.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/features/contact/layout/feature_contact_view_fragment.xml" value="0.23489583333333333" />
+        <entry key="app/src/main/features/dbu/layout/feature_dbu_detail_view_fragment.xml" value="0.25" />
+        <entry key="app/src/main/features/dbu/layout/feature_dbu_view_activity.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/features/dbu/layout/feature_dbu_view_fragment.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/features/employability/layout/feature_employability_detail_view_fragment.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/features/employability/layout/feature_employability_view_activity.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/features/employability/layout/feature_employability_view_fragment.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/features/home/drawable/feature_home_bg_header.xml" value="0.2375" />
+        <entry key="app/src/main/features/home/drawable/feature_home_ic_news.xml" value="0.12" />
+        <entry key="app/src/main/features/home/layout/feature_home_view_activity.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/features/home/layout/feature_home_view_fragment.xml" value="0.25" />
+        <entry key="app/src/main/features/library/layout/feature_library_view_fragment.xml" value="0.23489583333333333" />
+        <entry key="app/src/main/features/main/drawable/feature_main_ic_dbu_selector.xml" value="0.2375" />
+        <entry key="app/src/main/features/main/drawable/feature_main_ic_maps_inactive.xml" value="0.2375" />
+        <entry key="app/src/main/features/main/drawable/feature_main_ic_maps_selector.xml" value="0.2375" />
+        <entry key="app/src/main/features/main/drawable/feature_main_ic_profile_active.xml" value="0.2375" />
+        <entry key="app/src/main/features/main/drawable/ic_feature_home_ic_work.xml" value="0.2375" />
+        <entry key="app/src/main/features/main/drawable/ic_feature_home_item_more.xml" value="0.2375" />
+        <entry key="app/src/main/features/main/drawable/ic_feature_main_ic_dbu_active.xml" value="0.2375" />
+        <entry key="app/src/main/features/main/drawable/ic_feature_main_ic_dbu_inactive.xml" value="0.2375" />
+        <entry key="app/src/main/features/main/layout/feature_main_view_activity.xml" value="0.25833333333333336" />
+        <entry key="app/src/main/features/main/menu/feature_main_view_menu.xml" value="0.25833333333333336" />
+        <entry key="app/src/main/features/maps/layout/feature_maps_itemcard_view.xml" value="0.346875" />
+        <entry key="app/src/main/features/maps/layout/feature_maps_itemtitle_view.xml" value="0.346875" />
+        <entry key="app/src/main/features/maps/layout/feature_maps_view_fragment.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/features/more/drawable/ic_feature_more_campus.xml" value="0.2625" />
+        <entry key="app/src/main/features/more/drawable/ic_feature_more_dbu.xml" value="0.267" />
+        <entry key="app/src/main/features/more/drawable/ic_feature_more_employability.xml" value="0.256" />
+        <entry key="app/src/main/features/more/drawable/ic_feature_more_library.xml" value="0.1965" />
+        <entry key="app/src/main/features/more/drawable/ic_feature_more_tutorial.xml" value="0.1965" />
+        <entry key="app/src/main/features/more/layout/feature_more_view_fragment.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/features/news/drawable/feature_news_bg_type.xml" value="0.267" />
+        <entry key="app/src/main/features/news/drawable/feature_news_ic_time.xml" value="0.2515" />
+        <entry key="app/src/main/features/news/drawable/feature_news_ic_time_.xml" value="0.2515" />
+        <entry key="app/src/main/features/news/layout/feature_news_view_cell.xml" value="0.375" />
+        <entry key="app/src/main/features/news/layout/feature_news_view_cell_image.xml" value="0.346875" />
+        <entry key="app/src/main/features/news/layout/feature_news_view_fragment.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/features/payment/drawable/feature_payment_detail_ic_banbif.xml" value="0.267" />
+        <entry key="app/src/main/features/payment/drawable/feature_payment_detail_ic_bbva.xml" value="0.267" />
+        <entry key="app/src/main/features/payment/drawable/feature_payment_detail_ic_bcp.xml" value="0.267" />
+        <entry key="app/src/main/features/payment/drawable/feature_payment_detail_ic_niubiz.xml" value="0.267" />
+        <entry key="app/src/main/features/payment/drawable/ic_interbank.xml" value="0.267" />
+        <entry key="app/src/main/features/payment/layout/feature_payment_detail_view_fragment.xml" value="0.25" />
+        <entry key="app/src/main/features/payment/layout/feature_payment_title_view_cell.xml" value="0.346875" />
+        <entry key="app/src/main/features/payment/layout/feature_payment_view_cell.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/features/payment/layout/feature_payment_view_fragment.xml" value="0.2740036231884058" />
+        <entry key="app/src/main/features/procedure/layout/feature_procedure_view_activity.xml" value="0.26811594202898553" />
+        <entry key="app/src/main/features/procedure/layout/feature_procedure_view_fragment.xml" value="0.26811594202898553" />
+        <entry key="app/src/main/features/profile/drawable/feature_profile_ic_user.xml" value="0.267" />
+        <entry key="app/src/main/features/profile/layout/feature_profile_detail_view_activity.xml" value="0.33125" />
+        <entry key="app/src/main/features/profile/layout/feature_profile_detail_view_fragment.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/features/profile/layout/feature_profile_view_activity.xml" value="0.33229166666666665" />
+        <entry key="app/src/main/features/profile/layout/feature_profile_view_fragment.xml" value="0.25" />
+        <entry key="app/src/main/features/profile/layout/layout_profile_detail_view_fragment.xml" value="0.346875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

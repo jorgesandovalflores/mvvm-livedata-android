@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="green_wiener">#00B7BD</color>
+    <color name="green_wiener_light">#B300B7BD</color>
+    <color name="green_wiener_disable">#7fdbde</color>
+    <color name="blue_wiener">#1D428A</color>
+    <color name="read_wiener">#FF0600</color>
+    <color name="yellow_wiener">#FDD757</color>
+    <color name="gray_wiener">#97999B</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="gray1">#656565</color>
+    <color name="gray2">#656565</color>
+    <color name="gray3">#CBCBCB</color>
+    <color name="gray4">#EDEDED</color>
+    <color name="grayCard">#F6F6F6</color>
+
+    <color name="background1">#F5F5F5</color>
+    <color name="background2">#FFFFFF</color>
+    <color name="background_transparent">#4D656565</color>
+    <color name="green_card_active">#F3FEFF</color>
+
+</resources>

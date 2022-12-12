@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="component_dialog_not_wifi_title">Hay un error de conexión</string>
+    <string name="component_dialog_not_wifi_body">Verifica que estás conectado a internet y vuelve a intentarlo</string>
+
+    <string name="component_dialog_generic_title">¡Ha ocurrido un error!</string>
+    <string name="component_dialog_generic_body">Porfavor vuelve a intentarlo</string>
+
+    <string name="component_dialog_api_error_title">¡Atención!</string>
+
+    <string name="component_dialog_unauthorized_title">Hubo un error al ingresar</string>
+    <string name="component_dialog_unauthorized_body">Por el momento no cuenta con permiso para ingresar</string>
+    <string name="component_dialog_unauthorized_button_primary">Entendido</string>
+</resources>

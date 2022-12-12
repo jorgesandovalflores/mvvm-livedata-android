@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feature_recovery_navigation"
+    app:startDestination="@id/feature_recovery_entry">
+
+    <fragment
+        android:id="@+id/feature_recovery_entry"
+        android:name="com.quebuu.mvvm_livedata_android.features.auth.recovery.view.FeatureRecoveryViewFragment"
+        android:label="FeatureRecoveryEntry"
+        tools:layout="@layout/feature_recovery_view_fragment">
+        <argument
+            android:name="featureRecoveryViewInput"
+            android:defaultValue="@null"
+            app:argType="com.quebuu.mvvm_livedata_android.features.auth.recovery.view.FeatureRecoveryViewInput"
+            app:nullable="true"/>        
+    </fragment>
+    
+</navigation>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Proyecto mvvm-livedata-android Dev</string>
+    <string name="core_reload_text">Tuvimos un problema al cargar la información</string>
+    <string name="core_reload_lnk"><u>Volver a intentarlo</u></string>
+</resources>

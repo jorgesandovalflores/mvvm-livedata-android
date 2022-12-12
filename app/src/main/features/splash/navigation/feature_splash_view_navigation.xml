@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feature_splash_navigation"
+    app:startDestination="@id/feature_splash_entry">
+
+    <fragment
+        android:id="@+id/feature_splash_entry"
+        android:name="com.quebuu.mvvm_livedata_android.features.splash.view.FeatureSplashViewFragment"
+        android:label="FeatureSplashEntry"
+        tools:layout="@layout/feature_splash_view_fragment">
+        <argument
+            android:name="featureSplashViewInput"
+            android:defaultValue="@null"
+            app:argType="com.quebuu.mvvm_livedata_android.features.splash.view.FeatureSplashViewInput"
+            app:nullable="true"/>        
+    </fragment>
+    
+</navigation>

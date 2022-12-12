@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/bg_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/feature_sign_in_bg_header"/>
+
+    <View
+        android:id="@+id/divider_header"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/default_dp_4_10"
+        app:layout_constraintStart_toStartOf="@id/bg_header"
+        app:layout_constraintEnd_toEndOf="@id/bg_header"
+        app:layout_constraintBottom_toBottomOf="@id/bg_header"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/feature_sign_in_bg_round"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_header"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.quebuu.mvvm_livedata_android.common.components.textinput.ComponentTextInput
+            android:id="@+id/ed_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_dp_4_6"
+            android:hint="@string/feature_sign_in_input_username"
+            android:maxLength="12"
+            android:imeOptions="actionNext"
+            app:inputType="textAllCaps"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.quebuu.mvvm_livedata_android.common.components.textinput.ComponentTextInput
+            android:id="@+id/ed_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_dp_4_6"
+            android:layout_marginEnd="@dimen/default_dp_4_6"
+            android:layout_marginTop="@dimen/default_dp_4_2"
+            android:hint="@string/feature_sign_in_input_password"
+            android:maxLength="12"
+            android:imeOptions="actionSend"
+            app:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ed_username" />
+
+        <CheckBox
+            android:button="@drawable/core_checkbox_selector"
+            android:id="@+id/chbx_remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_dp_4_6"
+            android:layout_marginTop="@dimen/default_dp_4_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ed_password"/>
+
+        <TextView
+            style="@style/text_button.gray1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feature_sign_in_input_remember"
+            android:layout_marginStart="@dimen/default_dp_4_2"
+            app:layout_constraintStart_toEndOf="@id/chbx_remember"
+            app:layout_constraintTop_toTopOf="@id/chbx_remember"
+            app:layout_constraintBottom_toBottomOf="@id/chbx_remember"/>
+
+        <TextView
+            android:id="@+id/lnk_terms"
+            style="@style/text_extras.gray1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/feature_sign_in_lnk_terms"
+            android:layout_marginStart="@dimen/default_dp_4_6"
+            android:layout_marginEnd="@dimen/default_dp_4_6"
+            android:layout_marginBottom="@dimen/default_sp_4_7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_login"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/button_primary_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_dp_4_6"
+            android:layout_marginEnd="@dimen/default_dp_4_6"
+            android:layout_marginBottom="@dimen/default_dp_4_8"
+            android:text="@string/feature_sign_in_input_button"
+            android:enabled="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/lnk_recovery"/>
+
+        <TextView
+            android:id="@+id/lnk_recovery"
+            style="@style/text_link.gray1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feature_sign_in_lnk_recovery"
+            android:layout_marginBottom="@dimen/default_dp_10_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        layout="@layout/core_view_custom_loading"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

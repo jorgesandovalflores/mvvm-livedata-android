@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_sign_in_input_username">Código de alumno</string>
+    <string name="feature_sign_in_input_password">Contraseña</string>
+    <string name="feature_sign_in_input_remember">Recuérdame</string>
+    <string name="feature_sign_in_lnk_recovery"><u>¿Olvidaste tu contraseña?</u></string>
+    <string name="feature_sign_in_input_button">Ingresar</string>
+    <string name="feature_sign_in_lnk_terms">Al ingresar está aceptando los <u>Términos y Condiciones</u></string>
+    <string name="feature_sign_in_validate_username">El formato del código es inválido</string>
+    <string name="feature_sign_in_validate_password">El formato de la contraseña es inválido</string>
+    <string name="feature_sign_in_digits_password">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890.</string>
+    <string name="feature_sign_in_validate_profile_popup_title">Hubo un error al ingresar</string>
+    <string name="feature_sign_in_validate_profile_popup_message">Por el momento no cuenta con permiso para ingresar</string>
+    <string name="feature_sign_in_validate_profile_popup_message_other">Los datos ingresados no son válidos, porfavor vuelve a intentarlo</string>
+    <string name="feature_sign_in_url_terms">https://intranet.uwiener.quebuu.pe/terminos_condiciones.html</string>
+</resources>
